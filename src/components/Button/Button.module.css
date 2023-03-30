@@ -1,0 +1,26 @@
+.button {
+  text-align: center;
+  padding: 23px 0;
+  width: 100%;
+  border-radius: 14px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  background: #fff;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  color: #4953be;
+  border-bottom: 3px solid #fff;
+}
+
+.actionButton {
+  background: linear-gradient(90deg, #ffa67a 0%, #ff6065 100%);
+  color: #fff;
+  border-bottom: 3px solid #c65252;
+}
+
+.confirmButton {
+  background: #4953be;
+  color: #fff;
+  border-bottom: 3px solid #424a9e;
+}

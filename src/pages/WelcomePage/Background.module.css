@@ -1,0 +1,17 @@
+.container {
+  background-color: #4751c0;
+}
+
+.img2 {
+  right: 0;
+}
+
+.img3 {
+  bottom: 0;
+}
+
+.img4 {
+  right: 0;
+  bottom: -110px;
+  rotate: 180deg;
+}

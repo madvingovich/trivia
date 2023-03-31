@@ -1,8 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+type Answer = "Trus" | "False";
+
 interface Question {
   question: string;
-  correct_answer: string;
+  correct_answer: Answer;
+  user_answer: Answer | undefined;
 }
 
 interface CounterState {

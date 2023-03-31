@@ -1,8 +1,6 @@
-import { SyntheticEvent } from "react";
-
 export interface Option {
   label: string;
-  value: string | number | readonly string[] | undefined;
+  value: string;
 }
 
 export interface InputProps {

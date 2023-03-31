@@ -13,6 +13,12 @@
   border-bottom: 3px solid #fff;
 }
 
+.button:disabled {
+  background: #9e9e9e;
+  color: #4e4e4e;
+  border-bottom: 3px solid #515151;
+}
+
 .actionButton {
   background: linear-gradient(90deg, #ffa67a 0%, #ff6065 100%);
   color: #fff;

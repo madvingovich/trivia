@@ -1,4 +1,5 @@
 import React from "react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Button from "../../components/Button/Button";
 import { Option } from "../../components/Inputs/InputProps.interface";
 import Select from "../../components/Inputs/Select";
@@ -6,6 +7,7 @@ import TextInput from "../../components/Inputs/TextInput";
 import TriviaLogo from "../../components/TriviaLogo";
 import AmountIcon from "../../images/AmountIcon.svg";
 import DifficultyIcon from "../../images/DifficultyIcon.svg";
+import { fetchQuestions } from "../../redux/trivia/triviaSlice";
 import Background from "./Background";
 import styles from "./WelcomePage.module.css";
 
@@ -15,7 +17,15 @@ const SELECT_OPTIONS: Option[] = [
 ];
 
 function WelcomePage() {
-  const [difficulty, setDifficulty] = React.useState(SELECT_OPTIONS[0].value);
+  const [difficulty, setDifficulty] = React.useState<string>(
+    SELECT_OPTIONS[0].value
+  );
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector((state) => state.trivia.loading);
+
+  const startTrivia = () => {
+    dispatch(fetchQuestions(difficulty));
+  };
 
   return (
     <div className={styles.container}>
@@ -41,7 +51,12 @@ function WelcomePage() {
         />
       </div>
       <div className={`${styles.contentContainer} ${styles.buttonContainer}`}>
-        <Button type="action" text="TRUE" onClick={() => {}} />
+        <Button
+          type="action"
+          text="TRUE"
+          onClick={startTrivia}
+          disabled={loading}
+        />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ function Select({
   className,
   options,
 }: SelectProps) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const selectRef = useRef<HTMLDivElement>(null);
 
   const closeDropdown = useCallback((e: MouseEvent) => {

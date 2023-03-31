@@ -1,8 +1,9 @@
-import React, { SyntheticEvent } from "react";
+import { SyntheticEvent } from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
   type?: "default" | "action" | "confirm";
+  disabled?: boolean;
   text: string;
   onClick: (e: SyntheticEvent) => void;
 }
@@ -16,9 +17,10 @@ const BUTTON_STYLE_TYPE_MAPPINT: Mapping = {
   confirm: styles.confirmButton,
 };
 
-function Button({ type = "default", text, onClick }: ButtonProps) {
+function Button({ type = "default", text, onClick, disabled }: ButtonProps) {
   return (
     <button
+      disabled={disabled}
       className={`${styles.button} ${BUTTON_STYLE_TYPE_MAPPINT[type] || ""}`}
       onClick={onClick}
     >

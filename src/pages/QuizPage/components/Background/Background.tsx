@@ -1,5 +1,5 @@
 import backgroundContainerStyle from "pages/BackgroundContainer.module.css";
-import backgroundStyle from "./Background.module.css";
+import backgroundStyles from "./Background.module.css";
 
 import img1 from "images/bg-quiz-1.svg";
 import img2 from "images/bg-quiz-2.svg";
@@ -11,10 +11,10 @@ function Background() {
   return (
     <div className={backgroundContainerStyle.container}>
       <img alt="" src={img1} />
-      <img alt="" className={backgroundStyle.img2} src={img2} />
-      <img alt="" className={backgroundStyle.img3} src={img3} />
-      <img alt="" className={backgroundStyle.img4} src={img4} />
-      <img alt="" className={backgroundStyle.img5} src={img5} />
+      <img alt="" className={backgroundStyles.img2} src={img2} />
+      <img alt="" className={backgroundStyles.img3} src={img3} />
+      <img alt="" className={backgroundStyles.img4} src={img4} />
+      <img alt="" className={backgroundStyles.img5} src={img5} />
     </div>
   );
 }

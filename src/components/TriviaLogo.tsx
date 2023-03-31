@@ -1,4 +1,4 @@
-import logo from "../images/trivia.svg";
+import logo from "images/trivia.svg";
 
 function TriviaLogo() {
   return <img src={logo} alt="TRIVIA" width="100%" />;

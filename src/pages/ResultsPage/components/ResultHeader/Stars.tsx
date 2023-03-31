@@ -1,5 +1,5 @@
-import filledStar from "../../../../images/star-filled.svg";
-import emptyStar from "../../../../images/star-empty.svg";
+import filledStar from "images/star-filled.svg";
+import emptyStar from "images/star-empty.svg";
 import styles from "./ResultHeader.module.css";
 
 interface StarsProps {

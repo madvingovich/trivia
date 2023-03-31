@@ -1,11 +1,11 @@
 import backgroundContainerStyle from "../../../BackgroundContainer.module.css";
 import backgroundStyle from "./Background.module.css";
 
-import img1 from "../../../../images/bg-quiz-1.svg";
-import img2 from "../../../../images/bg-quiz-2.svg";
-import img3 from "../../../../images/bg-quiz-3.svg";
-import img4 from "../../../../images/bg-quiz-4.svg";
-import img5 from "../../../../images/bg-quiz-5.svg";
+import img1 from "images/bg-quiz-1.svg";
+import img2 from "images/bg-quiz-2.svg";
+import img3 from "images/bg-quiz-3.svg";
+import img4 from "images/bg-quiz-4.svg";
+import img5 from "images/bg-quiz-5.svg";
 
 function Background() {
   return (

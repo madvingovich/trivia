@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import InputContainer from "./InputContainer";
 import { Option, SelectProps } from "./InputProps.interface";
 import styles from "./Inputs.module.css";
-import arrow from "../../images/arrow.svg";
+import arrow from "images/arrow.svg";
 
 function Select({
   label,

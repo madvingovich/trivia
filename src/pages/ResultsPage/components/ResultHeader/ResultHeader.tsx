@@ -1,4 +1,4 @@
-import userIcon from "../../../../images/user-icon.svg";
+import userIcon from "images/user-icon.svg";
 import styles from "./ResultHeader.module.css";
 import Stars from "./Stars";
 

@@ -11,3 +11,9 @@
 .container img {
   position: absolute;
 }
+
+@media screen and (min-width: 600px) {
+  .container img {
+    transform: scale(1.5);
+  }
+}

@@ -2,9 +2,10 @@
   box-sizing: border-box;
 }
 
-html {
+:root {
   --color-bg: #4751c0;
   --color-primary: #4953be;
+  --container-width: 320px;
 }
 
 body {
@@ -27,4 +28,10 @@ code {
   min-height: 100vh;
   left: 0;
   top: 0;
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --container-width: 445px;
+  }
 }

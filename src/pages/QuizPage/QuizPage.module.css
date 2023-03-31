@@ -1,7 +1,7 @@
 .container {
   padding: 12vh 0 5vh 0;
   color: var(--color-primary);
-  max-width: 340px;
+  width: var(--container-width);
   margin: 0 auto;
 }
 

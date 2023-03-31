@@ -37,7 +37,7 @@ function WelcomePage() {
       <Background />
       <div>
         <h1 className={styles.h1}>Welcome To the</h1>
-        <TriviaLogo />
+        <TriviaLogo className={styles.logo} />
       </div>
       <div className={styles.inputsContainer}>
         <Select

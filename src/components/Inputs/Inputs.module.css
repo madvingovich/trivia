@@ -30,6 +30,10 @@
   position: relative;
 }
 
+.select {
+  cursor: pointer;
+}
+
 .options {
   position: absolute;
   width: 100%;

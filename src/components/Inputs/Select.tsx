@@ -1,4 +1,4 @@
-import React from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import InputContainer from "./InputContainer";
 import { Option, SelectProps } from "./InputProps.interface";
 import styles from "./Inputs.module.css";
@@ -11,7 +11,19 @@ function Select({
   className,
   options,
 }: SelectProps) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement>(null);
+
+  const closeDropdown = useCallback((e: MouseEvent) => {
+    if (!selectRef.current?.contains(e.target as HTMLElement)) {
+      setOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", closeDropdown);
+    return () => document.removeEventListener("mousedown", closeDropdown);
+  }, [closeDropdown]);
 
   const handleOptionSelect = (value: Option["value"]) => {
     onChange(value);
@@ -27,21 +39,26 @@ function Select({
       label={label}
       icon={icon}
     >
-      <span onClick={() => setOpen(true)} className={styles.input}>
-        {selectedOptionLabel}
-      </span>
-      {open ? (
-        <div className={styles.options}>
-          {options.map(({ label, value }) => (
-            <div
-              className={styles.option}
-              onClick={() => handleOptionSelect(value)}
-            >
-              {label}
-            </div>
-          ))}
-        </div>
-      ) : null}
+      <div ref={selectRef}>
+        <span
+          onClick={() => setOpen((o) => !o)}
+          className={`${styles.input} ${styles.select}`}
+        >
+          {selectedOptionLabel}
+        </span>
+        {open ? (
+          <div className={styles.options}>
+            {options.map(({ label, value }) => (
+              <div
+                className={styles.option}
+                onClick={() => handleOptionSelect(value)}
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </div>
     </InputContainer>
   );
 }

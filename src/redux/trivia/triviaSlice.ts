@@ -1,18 +1,19 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Answer = "Trus" | "False";
+export type Answer = "True" | "False";
 
-interface Question {
+export interface Question {
   category: string;
   question: string;
   correct_answer: Answer;
-  user_answer: Answer | undefined;
+  user_answer?: Answer;
 }
 
 interface CounterState {
   loading: boolean;
   questions: Question[];
   error: string | null;
+  currentQuestionIndex: number;
 }
 
 interface TriviaResponse {
@@ -34,12 +35,19 @@ const initialState: CounterState = {
   questions: [],
   loading: false,
   error: null,
+  currentQuestionIndex: 0,
 };
 
 export const triviaSlice = createSlice({
   name: "counter",
   initialState,
-  reducers: {},
+  reducers: {
+    nextQuestion: (state, action: PayloadAction<Answer>) => {
+      console.log("--> action", action);
+      state.questions[state.currentQuestionIndex].user_answer = action.payload;
+      state.currentQuestionIndex++;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchQuestions.pending, (state) => {
       state.loading = true;
@@ -57,3 +65,5 @@ export const triviaSlice = createSlice({
     });
   },
 });
+
+export const { nextQuestion } = triviaSlice.actions;

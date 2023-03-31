@@ -1,0 +1,11 @@
+.container {
+  padding: 12vh 0 0 0;
+  color: #4953be;
+  height: 100vh;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.firstButton {
+  margin-bottom: 10px;
+}

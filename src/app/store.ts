@@ -1,9 +1,9 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import { triviaSlice } from "../redux/trivia/triviaSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    trivia: triviaSlice.reducer,
   },
 });
 

@@ -10,7 +10,7 @@ import AmountIcon from "../../images/AmountIcon.svg";
 import DifficultyIcon from "../../images/DifficultyIcon.svg";
 import { fetchQuestions } from "../../redux/trivia/triviaSlice";
 import { PATHS } from "../../router";
-import Background from "./Background";
+import Background from "./components/Background/Background";
 import styles from "./WelcomePage.module.css";
 
 const SELECT_OPTIONS: Option[] = [

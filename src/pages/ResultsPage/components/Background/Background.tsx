@@ -1,4 +1,4 @@
-import backgroundContainerStyle from "../BackgroundContainer.module.css";
+import backgroundContainerStyle from "../../../BackgroundContainer.module.css";
 
 function Background() {
   return <div className={backgroundContainerStyle.container}></div>;

@@ -9,11 +9,12 @@ export interface Question {
   user_answer?: Answer;
 }
 
-interface CounterState {
+interface TriviaState {
   loading: boolean;
   questions: Question[];
   error: string | null;
   currentQuestionIndex: number;
+  quizDone: boolean;
 }
 
 interface TriviaResponse {
@@ -31,11 +32,12 @@ export const fetchQuestions = createAsyncThunk(
   }
 );
 
-const initialState: CounterState = {
+const initialState: TriviaState = {
   questions: [],
   loading: false,
   error: null,
   currentQuestionIndex: 0,
+  quizDone: false,
 };
 
 export const triviaSlice = createSlice({
@@ -43,9 +45,11 @@ export const triviaSlice = createSlice({
   initialState,
   reducers: {
     nextQuestion: (state, action: PayloadAction<Answer>) => {
-      console.log("--> action", action);
       state.questions[state.currentQuestionIndex].user_answer = action.payload;
       state.currentQuestionIndex++;
+    },
+    finishQuiz: (state) => {
+      state.quizDone = true;
     },
   },
   extraReducers: (builder) => {
@@ -66,4 +70,4 @@ export const triviaSlice = createSlice({
   },
 });
 
-export const { nextQuestion } = triviaSlice.actions;
+export const { nextQuestion, finishQuiz } = triviaSlice.actions;

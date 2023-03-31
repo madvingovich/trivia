@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  --color-bg: #4751c0;
+  --color-primary: #4953be;
+}
+
 body {
   margin: 0;
   font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI",

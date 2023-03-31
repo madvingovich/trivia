@@ -1,5 +1,5 @@
 .container {
-  background-color: #4751c0;
+  background-color: var(--color-bg);
 }
 
 .img2 {

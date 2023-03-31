@@ -4,12 +4,12 @@
   width: 100%;
   border-radius: 14px;
   outline: none;
-  border: 2px solid #4953be;
+  border: 2px solid var(--color-primary);
   font-size: 15px;
   background: #fff;
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
-  color: #4953be;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -28,7 +28,7 @@
 
 .confirmButton {
   border: none;
-  background: #4953be;
+  background: var(--color-primary);
   color: #fff;
   border-bottom: 5px solid #424a9e;
 }

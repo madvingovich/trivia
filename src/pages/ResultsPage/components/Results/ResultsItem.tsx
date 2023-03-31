@@ -1,23 +1,28 @@
-import React from "react";
-import { Answer, Question } from "../../../../redux/trivia/triviaSlice";
-import styles from "./Results.module.css";
 import checkmark from "../../../../images/checkmark.svg";
 import cross from "../../../../images/cross.svg";
+import { Answer } from "../../../../redux/trivia/triviaSlice";
+import styles from "./Results.module.css";
 
-const ANSWER_TYPE_IMAGE_MAPPING: Record<Answer, string> = {
-  True: checkmark,
-  False: cross,
-};
+interface ReslutsItemProps {
+  question: string;
+  userAnswer: Answer;
+  correctAnswer: Answer;
+}
 
-function ResultsItem({ question }: { question: Question }) {
+function ResultsItem({
+  question,
+  userAnswer,
+  correctAnswer,
+}: ReslutsItemProps) {
+  const answerIsCorrect = userAnswer === correctAnswer;
   return (
     <div
       className={`${styles.resultItem} ${
-        question.user_answer === "True" ? styles.resultItemIncorrent : ""
+        answerIsCorrect ? "" : styles.resultItemIncorrent
       }`}
     >
-      <div dangerouslySetInnerHTML={{ __html: question.question }} />
-      <img alt="" src={ANSWER_TYPE_IMAGE_MAPPING[question.user_answer]} />
+      <div dangerouslySetInnerHTML={{ __html: question }} />
+      <img alt="" src={answerIsCorrect ? checkmark : cross} />
     </div>
   );
 }

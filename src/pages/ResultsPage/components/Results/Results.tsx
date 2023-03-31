@@ -1,22 +1,20 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../../../app/hooks";
-import { PATHS } from "../../../../router";
+import { Question } from "../../../../redux/trivia/triviaSlice";
 import ResultsItem from "./ResultsItem";
 
-function Results() {
-  const { questions, quizDone } = useAppSelector((state) => state.trivia);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!quizDone) {
-      navigate(PATHS.quiz);
-    }
-  }, [quizDone, navigate]);
+interface ResultsProps {
+  questions: Question[];
+}
 
+function Results({ questions }: ResultsProps) {
   return (
     <div>
       {questions.map((question, index) => (
-        <ResultsItem key={index} question={question} />
+        <ResultsItem
+          key={index}
+          question={question.question}
+          correctAnswer={question.correct_answer}
+          userAnswer={question.user_answer}
+        />
       ))}
     </div>
   );

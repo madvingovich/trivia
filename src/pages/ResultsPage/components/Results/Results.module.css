@@ -18,7 +18,7 @@
 }
 
 .resultItem:not(:last-child) {
-  margin-bottom: 13px;
+  margin-bottom: 15px;
 }
 
 .resultItem img {

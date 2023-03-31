@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import Button from "components/Button/Button";
-import { Question } from "redux/trivia/triviaSlice";
+import { Question, resetState } from "redux/trivia/triviaSlice";
 import { PATHS } from "router";
 import Background from "./components/Background/Background";
 import ResultHeader from "./components/ResultHeader/ResultHeader";
@@ -12,6 +12,7 @@ import styles from "./ResultsPage.module.css";
 const filterCorrect = (q: Question) => q.correct_answer === q.user_answer;
 
 function ResultsPage() {
+  const dispatch = useAppDispatch();
   const { questions, quizDone } = useAppSelector((state) => state.trivia);
   const navigate = useNavigate();
 
@@ -20,6 +21,11 @@ function ResultsPage() {
       navigate(PATHS.quiz);
     }
   }, [quizDone, navigate]);
+
+  const handlePlayAgain = () => {
+    dispatch(resetState());
+    navigate(PATHS.index);
+  };
 
   return (
     <div className={styles.container}>
@@ -31,7 +37,7 @@ function ResultsPage() {
       <div className={styles.resultsContainer}>
         <Results questions={questions} />
       </div>
-      <Button type="action" text="PLAY AGAIN" onClick={() => {}} />
+      <Button type="action" text="PLAY AGAIN" onClick={handlePlayAgain} />
     </div>
   );
 }

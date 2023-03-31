@@ -53,6 +53,7 @@ export const triviaSlice = createSlice({
     finishQuiz: (state) => {
       state.quizDone = true;
     },
+    resetState: () => initialState,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchQuestions.pending, (state) => {
@@ -72,4 +73,5 @@ export const triviaSlice = createSlice({
   },
 });
 
-export const { answerCurrentQuestion, finishQuiz } = triviaSlice.actions;
+export const { answerCurrentQuestion, finishQuiz, resetState } =
+  triviaSlice.actions;

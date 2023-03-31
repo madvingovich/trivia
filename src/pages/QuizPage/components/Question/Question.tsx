@@ -1,11 +1,13 @@
-import { Question as IQuestion } from "../../../../redux/trivia/triviaSlice";
+import { Question as IQuestion } from "redux/trivia/triviaSlice";
 import QuestionTracker from "../QuestionTracker/QuestionTracker";
 import styles from "./Question.module.css";
+
 interface QuestionProps {
   question: IQuestion;
   currentQuestionIndex: number;
   totalQuestions: number;
 }
+
 function Question({
   question,
   currentQuestionIndex,

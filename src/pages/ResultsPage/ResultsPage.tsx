@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import Button from "../../components/Button/Button";
-import { Question } from "../../redux/trivia/triviaSlice";
-import { PATHS } from "../../router";
+import { useAppSelector } from "app/hooks";
+import Button from "components/Button/Button";
+import { Question } from "redux/trivia/triviaSlice";
+import { PATHS } from "router";
 import Background from "./components/Background/Background";
 import ResultHeader from "./components/ResultHeader/ResultHeader";
 import Results from "./components/Results/Results";

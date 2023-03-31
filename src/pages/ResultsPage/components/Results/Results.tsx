@@ -1,4 +1,4 @@
-import { Question } from "../../../../redux/trivia/triviaSlice";
+import { Question } from "redux/trivia/triviaSlice";
 import ResultsItem from "./ResultsItem";
 
 interface ResultsProps {

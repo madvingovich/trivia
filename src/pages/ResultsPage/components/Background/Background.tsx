@@ -1,4 +1,4 @@
-import backgroundContainerStyle from "../../../BackgroundContainer.module.css";
+import backgroundContainerStyle from "pages/BackgroundContainer.module.css";
 import backgroundStyles from "./Background.module.css";
 
 function Background() {

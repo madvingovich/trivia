@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import Button from "../../components/Button/Button";
-import { Option } from "../../components/Inputs/InputProps.interface";
-import Select from "../../components/Inputs/Select";
-import TextInput from "../../components/Inputs/TextInput";
-import TriviaLogo from "../../components/TriviaLogo";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import Button from "components/Button/Button";
+import { Option } from "components/Inputs/InputProps.interface";
+import Select from "components/Inputs/Select";
+import TextInput from "components/Inputs/TextInput";
+import TriviaLogo from "components/TriviaLogo";
 import AmountIcon from "images/AmountIcon.svg";
 import DifficultyIcon from "images/DifficultyIcon.svg";
-import { fetchQuestions } from "../../redux/trivia/triviaSlice";
-import { PATHS } from "../../router";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { fetchQuestions } from "redux/trivia/triviaSlice";
+import { PATHS } from "router";
 import Background from "./components/Background/Background";
 import styles from "./WelcomePage.module.css";
 

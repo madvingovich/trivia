@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import Button from "../../components/Button/Button";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import Button from "components/Button/Button";
 import {
   Answer,
   finishQuiz,
   answerCurrentQuestion,
-} from "../../redux/trivia/triviaSlice";
-import { PATHS } from "../../router";
+} from "redux/trivia/triviaSlice";
+import { PATHS } from "router";
 import Background from "./components/Background/Background";
 import Question from "./components/Question/Question";
 import styles from "./QuizPage.module.css";

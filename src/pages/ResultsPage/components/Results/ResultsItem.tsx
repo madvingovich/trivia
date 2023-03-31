@@ -1,6 +1,6 @@
 import checkmark from "images/checkmark.svg";
 import cross from "images/cross.svg";
-import { Answer } from "../../../../redux/trivia/triviaSlice";
+import { Answer } from "redux/trivia/triviaSlice";
 import styles from "./Results.module.css";
 
 interface ReslutsItemProps {

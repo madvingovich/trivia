@@ -1,4 +1,4 @@
-import backgroundContainerStyle from "../../../BackgroundContainer.module.css";
+import backgroundContainerStyle from "pages/BackgroundContainer.module.css";
 import backgroundStyle from "./Background.module.css";
 import img1 from "images/bg-welcome-1.svg";
 import img2 from "images/bg-welcome-2.svg";

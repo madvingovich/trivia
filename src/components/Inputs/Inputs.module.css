@@ -55,6 +55,8 @@
   color: var(--color-primary);
   width: 100%;
   background: #fff;
+  cursor: pointer;
+  font-size: 14px;
 }
 .option:not(:last-child) {
   border-bottom: 1px solid var(--color-primary);

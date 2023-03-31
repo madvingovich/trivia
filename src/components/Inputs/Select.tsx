@@ -54,6 +54,7 @@ function Select({
           <div className={styles.options}>
             {options.map(({ label, value }) => (
               <div
+                key={value}
                 className={styles.option}
                 onClick={() => handleOptionSelect(value)}
               >

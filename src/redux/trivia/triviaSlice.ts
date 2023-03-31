@@ -6,7 +6,7 @@ export interface Question {
   category: string;
   question: string;
   correct_answer: Answer;
-  user_answer?: Answer;
+  user_answer: Answer;
 }
 
 interface TriviaState {
@@ -44,9 +44,11 @@ export const triviaSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    nextQuestion: (state, action: PayloadAction<Answer>) => {
+    answerCurrentQuestion: (state, action: PayloadAction<Answer>) => {
       state.questions[state.currentQuestionIndex].user_answer = action.payload;
-      state.currentQuestionIndex++;
+      if (state.currentQuestionIndex < state.questions.length - 1) {
+        state.currentQuestionIndex++;
+      }
     },
     finishQuiz: (state) => {
       state.quizDone = true;
@@ -70,4 +72,4 @@ export const triviaSlice = createSlice({
   },
 });
 
-export const { nextQuestion, finishQuiz } = triviaSlice.actions;
+export const { answerCurrentQuestion, finishQuiz } = triviaSlice.actions;

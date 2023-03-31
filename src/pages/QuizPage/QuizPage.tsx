@@ -5,7 +5,7 @@ import Button from "../../components/Button/Button";
 import {
   Answer,
   finishQuiz,
-  nextQuestion,
+  answerCurrentQuestion,
 } from "../../redux/trivia/triviaSlice";
 import { PATHS } from "../../router";
 import Background from "./components/Background/Background";
@@ -31,10 +31,9 @@ function QuizPage() {
     }
   }, [quizDone, navigate]);
 
-  const goToNextQuestion = (answer: Answer) => () => {
-    if (currentQuestionIndex + 1 < questions.length) {
-      dispatch(nextQuestion(answer));
-    } else {
+  const answerQuestion = (answer: Answer) => () => {
+    dispatch(answerCurrentQuestion(answer));
+    if (currentQuestionIndex === questions.length - 1) {
       dispatch(finishQuiz());
     }
   };
@@ -51,9 +50,9 @@ function QuizPage() {
         className={styles.firstButton}
         type="confirm"
         text="TRUE"
-        onClick={goToNextQuestion("True")}
+        onClick={answerQuestion("True")}
       />
-      <Button text="FALSE" onClick={goToNextQuestion("False")} />
+      <Button text="FALSE" onClick={answerQuestion("False")} />
     </div>
   ) : null;
 }

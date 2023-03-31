@@ -1,0 +1,26 @@
+.container {
+  margin: 20px 0 25px;
+}
+
+.resultItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 17px;
+  background: #fffbfa;
+  border-radius: 14px;
+  color: #464fac;
+  font-size: 12px;
+}
+
+.resultItemIncorrent {
+  background: #ffdbdb;
+}
+
+.resultItem:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.resultItem img {
+  margin-left: 8px;
+}

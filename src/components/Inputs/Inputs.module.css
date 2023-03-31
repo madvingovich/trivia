@@ -31,7 +31,14 @@
 }
 
 .select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
+}
+
+.selectOpen img {
+  rotate: 180deg;
 }
 
 .options {

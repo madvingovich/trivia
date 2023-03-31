@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import InputContainer from "./InputContainer";
 import { Option, SelectProps } from "./InputProps.interface";
 import styles from "./Inputs.module.css";
+import arrow from "../../images/arrow.svg";
 
 function Select({
   label,
@@ -42,9 +43,12 @@ function Select({
       <div ref={selectRef}>
         <span
           onClick={() => setOpen((o) => !o)}
-          className={`${styles.input} ${styles.select}`}
+          className={`${styles.input} ${styles.select} ${
+            open ? styles.selectOpen : ""
+          }`}
         >
           {selectedOptionLabel}
+          <img alt="arrow" src={arrow} />
         </span>
         {open ? (
           <div className={styles.options}>

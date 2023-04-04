@@ -2,6 +2,16 @@
   background-color: var(--color-bg);
 }
 
+.mobileView {
+  display: block;
+  height: 100%;
+}
+
+.desktopView {
+  display: none;
+  height: 100%;
+}
+
 .img2 {
   right: 0;
 }
@@ -14,4 +24,18 @@
   right: 0;
   bottom: -110px;
   rotate: 180deg;
+}
+
+.imgDesktop2 {
+  right: 0;
+  top: 8%;
+}
+
+.imgDesktop3 {
+  bottom: 0;
+}
+
+.imgDesktop4 {
+  right: 0;
+  bottom: 0;
 }

@@ -12,6 +12,11 @@
   color: var(--color-primary);
   font-weight: 700;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.button:hover {
+  box-shadow: 0 0 3px #4e4e4e;
 }
 
 .button:disabled {
@@ -31,5 +36,9 @@
   border: none;
   background: var(--color-primary);
   color: #fff;
-  border-bottom: 5px solid #424a9e;
+}
+
+.actionButton:hover {
+  border-bottom-width: 3px;
+  margin-top: 2px;
 }

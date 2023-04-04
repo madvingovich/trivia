@@ -1,9 +1,7 @@
+import { getQuestionNumber } from "pages/QuizPage/utils";
 import Progress from "./Progress";
 import styles from "./QuestionTracker.module.css";
 import { QuestionTrackerProps } from "./QuestionTrackerProps.interface";
-
-const getQuestionNumber = (n: number): string | number =>
-  String(n).length === 1 ? `0${n}` : n;
 
 function QuestionTracker({ question, totalQuestions }: QuestionTrackerProps) {
   return (

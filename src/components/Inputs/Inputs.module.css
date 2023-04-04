@@ -49,6 +49,7 @@
   border-radius: 10px;
   overflow: hidden;
 }
+
 .option {
   position: relative;
   padding: 10px 15px;
@@ -58,6 +59,7 @@
   cursor: pointer;
   font-size: 14px;
 }
+
 .option:not(:last-child) {
   border-bottom: 1px solid var(--color-primary);
 }

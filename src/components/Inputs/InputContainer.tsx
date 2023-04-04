@@ -1,27 +1,14 @@
-import { ReactNode } from "react";
+import { InputContainerProps } from "./Inputs.types";
 import styles from "./Inputs.module.css";
-
-interface InputContainerProps {
-  className?: string;
-  label: string;
-  icon: string;
-  children: ReactNode;
-  onClick?: () => void;
-}
 
 function InputContainer({
   label,
   icon,
   className,
   children,
-  onClick,
 }: InputContainerProps) {
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.nativeEvent.stopImmediatePropagation();
-    onClick?.();
-  };
   return (
-    <div className={className} onClick={handleClick}>
+    <div className={className}>
       <div className={styles.label}>
         <img width="25px" src={icon} alt="icon" />
         {label}

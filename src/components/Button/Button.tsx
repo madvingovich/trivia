@@ -25,12 +25,11 @@ function Button({
   disabled,
   className,
 }: ButtonProps) {
+  const buttonTypeStyles = BUTTON_STYLE_TYPE_MAPPINT[type] || "";
   return (
     <button
       disabled={disabled}
-      className={`${styles.button} ${
-        BUTTON_STYLE_TYPE_MAPPINT[type] || ""
-      } ${className}`}
+      className={`${styles.button} ${buttonTypeStyles} ${className}`}
       onClick={onClick}
     >
       {text}

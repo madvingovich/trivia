@@ -1,8 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import InputContainer from "./InputContainer";
-import { Option, SelectProps } from "./InputProps.interface";
-import styles from "./Inputs.module.css";
+import { useDocumentEventListener } from "hooks/useDocumentEventListener";
 import arrow from "images/arrow.svg";
+import { useCallback, useRef, useState } from "react";
+import { Option, SelectProps } from "../Inputs.types";
+import InputContainer from "../InputContainer";
+import styles from "../Inputs.module.css";
+import { getSelectClassName } from "./utils";
+import Options from "./Options";
 
 function Select({
   label,
@@ -21,10 +24,7 @@ function Select({
     }
   }, []);
 
-  useEffect(() => {
-    document.addEventListener("mousedown", closeDropdown);
-    return () => document.removeEventListener("mousedown", closeDropdown);
-  }, [closeDropdown]);
+  useDocumentEventListener(closeDropdown);
 
   const handleOptionSelect = (value: Option["value"]) => {
     onChange(value);
@@ -43,25 +43,13 @@ function Select({
       <div ref={selectRef}>
         <span
           onClick={() => setOpen((o) => !o)}
-          className={`${styles.input} ${styles.select} ${
-            open ? styles.selectOpen : ""
-          }`}
+          className={getSelectClassName(open)}
         >
           {selectedOptionLabel}
           <img alt="arrow" src={arrow} />
         </span>
         {open ? (
-          <div className={styles.options}>
-            {options.map(({ label, value }) => (
-              <div
-                key={value}
-                className={styles.option}
-                onClick={() => handleOptionSelect(value)}
-              >
-                {label}
-              </div>
-            ))}
-          </div>
+          <Options onChange={handleOptionSelect} options={options} />
         ) : null}
       </div>
     </InputContainer>

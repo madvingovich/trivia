@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import Button from "components/Button/Button";
-import { Option } from "components/Inputs/InputProps.interface";
-import Select from "components/Inputs/Select";
+import { Option } from "components/Inputs/Inputs.types";
+import Select from "components/Inputs/Select/Select";
 import TextInput from "components/Inputs/TextInput";
 import TriviaLogo from "components/TriviaLogo";
 import AmountIcon from "images/AmountIcon.svg";

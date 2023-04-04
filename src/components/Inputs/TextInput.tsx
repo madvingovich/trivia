@@ -1,5 +1,5 @@
 import InputContainer from "./InputContainer";
-import { InputProps } from "./InputProps.interface";
+import { InputProps } from "./Inputs.types";
 import styles from "./Inputs.module.css";
 
 function TextInput({ label, icon, value, onChange, className }: InputProps) {

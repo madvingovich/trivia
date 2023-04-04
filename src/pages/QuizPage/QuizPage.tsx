@@ -1,16 +1,12 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import Button from "components/Button/Button";
-import {
-  Answer,
-  finishQuiz,
-  answerCurrentQuestion,
-} from "redux/trivia/triviaSlice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Answer, answerCurrentQuestion } from "redux/trivia/triviaSlice";
 import { PATHS } from "router";
+import styles from "./QuizPage.module.css";
 import Background from "./components/Background/Background";
 import Question from "./components/Question/Question";
-import styles from "./QuizPage.module.css";
 
 function QuizPage() {
   const dispatch = useAppDispatch();
@@ -22,20 +18,13 @@ function QuizPage() {
   useEffect(() => {
     if (!questions.length) {
       navigate(PATHS.index);
-    }
-  }, [questions, navigate]);
-
-  useEffect(() => {
-    if (quizDone) {
+    } else if (quizDone) {
       navigate(PATHS.results);
     }
-  }, [quizDone, navigate]);
+  }, [questions, quizDone, navigate]);
 
   const answerQuestion = (answer: Answer) => () => {
     dispatch(answerCurrentQuestion(answer));
-    if (currentQuestionIndex === questions.length - 1) {
-      dispatch(finishQuiz());
-    }
   };
 
   return questions.length ? (

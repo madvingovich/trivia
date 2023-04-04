@@ -48,10 +48,9 @@ export const triviaSlice = createSlice({
       state.questions[state.currentQuestionIndex].user_answer = action.payload;
       if (state.currentQuestionIndex < state.questions.length - 1) {
         state.currentQuestionIndex++;
+      } else {
+        state.quizDone = true;
       }
-    },
-    finishQuiz: (state) => {
-      state.quizDone = true;
     },
     resetState: () => initialState,
   },
@@ -73,5 +72,4 @@ export const triviaSlice = createSlice({
   },
 });
 
-export const { answerCurrentQuestion, finishQuiz, resetState } =
-  triviaSlice.actions;
+export const { answerCurrentQuestion, resetState } = triviaSlice.actions;

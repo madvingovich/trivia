@@ -10,6 +10,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `src/hooks` contains common hooks.
 
-`src/pages` contains pages folders, each folder contains page container itself, personal `components` folder, `utils` file if requied.
+`src/pages` contains pages folders and some common styles modules, each folder contains page container itself, personal `components` folder, `utils` file if requied.
 
 CSS modules methodology is used here, every component that has some styles has `*.module.css` file located next to it.

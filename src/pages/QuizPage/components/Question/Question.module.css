@@ -16,6 +16,16 @@
 .question {
   font-size: 25px;
   font-weight: normal;
-  text-align-last: left;
   margin: 50px 40px 50px 0;
+}
+
+@media screen and (min-width: 800px) {
+  .category {
+    font-size: 60px;
+  }
+
+  .question {
+    margin: 70px 0 70px;
+    text-align: center;
+  }
 }

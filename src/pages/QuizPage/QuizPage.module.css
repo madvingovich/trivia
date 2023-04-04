@@ -5,6 +5,17 @@
   margin: 0 auto;
 }
 
+.buttonsContainer {
+  max-width: 446px;
+  margin: 0 auto;
+}
+
 .firstButton {
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    width: 650px;
+  }
 }

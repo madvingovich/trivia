@@ -35,13 +35,15 @@ function QuizPage() {
         currentQuestionIndex={currentQuestionIndex}
         totalQuestions={questions.length}
       />
-      <Button
-        className={styles.firstButton}
-        type="confirm"
-        text="TRUE"
-        onClick={answerQuestion("True")}
-      />
-      <Button text="FALSE" onClick={answerQuestion("False")} />
+      <div className={styles.buttonsContainer}>
+        <Button
+          className={styles.firstButton}
+          type="confirm"
+          text="TRUE"
+          onClick={answerQuestion("True")}
+        />
+        <Button text="FALSE" onClick={answerQuestion("False")} />
+      </div>
     </div>
   ) : null;
 }

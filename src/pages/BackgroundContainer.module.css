@@ -12,6 +12,16 @@
   position: absolute;
 }
 
+.mobileView {
+  display: block;
+  height: 100%;
+}
+
+.desktopView {
+  display: none;
+  height: 100%;
+}
+
 @media screen and (min-width: 800px) {
   .mobileView {
     display: none;

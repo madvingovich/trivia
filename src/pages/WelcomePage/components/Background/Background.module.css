@@ -2,16 +2,6 @@
   background-color: var(--color-bg);
 }
 
-.mobileView {
-  display: block;
-  height: 100%;
-}
-
-.desktopView {
-  display: none;
-  height: 100%;
-}
-
 .img2 {
   right: 0;
 }

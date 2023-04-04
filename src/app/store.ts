@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { triviaSlice } from "../redux/trivia/triviaSlice";
+import { triviaSlice } from "./slices/triviaSlice";
 
 export const store = configureStore({
   reducer: {

@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import Button from "components/Button/Button";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Question, resetState } from "redux/trivia/triviaSlice";
+import { Question, resetState } from "app/slices/triviaSlice";
 import { PATHS } from "router";
 import styles from "./ResultsPage.module.css";
 import Background from "./components/Background/Background";

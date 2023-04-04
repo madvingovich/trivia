@@ -8,7 +8,7 @@ import AmountIcon from "images/AmountIcon.svg";
 import DifficultyIcon from "images/DifficultyIcon.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchQuestions } from "redux/trivia/triviaSlice";
+import { fetchQuestions } from "app/slices/triviaSlice";
 import { PATHS } from "router";
 import Background from "./components/Background/Background";
 import styles from "./WelcomePage.module.css";

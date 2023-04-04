@@ -1,4 +1,4 @@
-import { Question as IQuestion } from "redux/trivia/triviaSlice";
+import { Question as IQuestion } from "app/slices/triviaSlice";
 import QuestionTracker from "../QuestionTracker/QuestionTracker";
 import styles from "./Question.module.css";
 

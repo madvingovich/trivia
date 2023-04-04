@@ -2,6 +2,8 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type Answer = "True" | "False";
 
+export type Difficulty = "easy" | "hard";
+
 export interface Question {
   category: string;
   question: string;
@@ -11,6 +13,7 @@ export interface Question {
 
 interface TriviaState {
   loading: boolean;
+  difficulty: Difficulty;
   questions: Question[];
   error: string | null;
   currentQuestionIndex: number;
@@ -22,23 +25,24 @@ interface TriviaResponse {
   results: Question[];
 }
 
+const initialState: TriviaState = {
+  questions: [],
+  difficulty: "easy",
+  loading: false,
+  error: null,
+  currentQuestionIndex: 0,
+  quizDone: false,
+};
+
 export const fetchQuestions = createAsyncThunk(
   "fetchQuestions",
-  async (difficulty: string) => {
+  async (difficulty: Difficulty) => {
     const response = await fetch(
       `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}&type=boolean`
     );
     return response.json();
   }
 );
-
-const initialState: TriviaState = {
-  questions: [],
-  loading: false,
-  error: null,
-  currentQuestionIndex: 0,
-  quizDone: false,
-};
 
 export const triviaSlice = createSlice({
   name: "counter",
@@ -51,6 +55,13 @@ export const triviaSlice = createSlice({
       } else {
         state.quizDone = true;
       }
+    },
+    changeDifficulty: (state, action: PayloadAction<Difficulty>) => {
+      state.difficulty = action.payload;
+    },
+    resetCurrentQuestion: (state) => {
+      state.currentQuestionIndex = 0;
+      state.quizDone = false;
     },
     resetState: () => initialState,
   },
@@ -72,4 +83,9 @@ export const triviaSlice = createSlice({
   },
 });
 
-export const { answerCurrentQuestion, resetState } = triviaSlice.actions;
+export const {
+  answerCurrentQuestion,
+  changeDifficulty,
+  resetCurrentQuestion,
+  resetState,
+} = triviaSlice.actions;

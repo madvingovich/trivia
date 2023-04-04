@@ -1,0 +1,20 @@
+.cross {
+  position: absolute;
+  cursor: pointer;
+  top: 47px;
+  right: 21px;
+}
+
+@media screen and (min-width: 800px) {
+  .cross {
+    top: 50px;
+    right: 100px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .cross {
+    top: 100px;
+    right: 200px;
+  }
+}

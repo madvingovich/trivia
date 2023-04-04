@@ -1,4 +1,9 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
+import {
+  Difficulty,
+  changeDifficulty,
+  fetchQuestions,
+} from "app/slices/triviaSlice";
 import Button from "components/Button/Button";
 import { Option } from "components/Inputs/Inputs.types";
 import Select from "components/Inputs/Select/Select";
@@ -6,12 +11,10 @@ import TextInput from "components/Inputs/TextInput";
 import TriviaLogo from "components/TriviaLogo";
 import AmountIcon from "images/AmountIcon.svg";
 import DifficultyIcon from "images/DifficultyIcon.svg";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchQuestions } from "app/slices/triviaSlice";
 import { PATHS } from "router";
-import Background from "./components/Background/Background";
 import styles from "./WelcomePage.module.css";
+import Background from "./components/Background/Background";
 
 const SELECT_OPTIONS: Option[] = [
   { label: "Easy", value: "easy" },
@@ -19,17 +22,20 @@ const SELECT_OPTIONS: Option[] = [
 ];
 
 function WelcomePage() {
-  const [difficulty, setDifficulty] = useState(SELECT_OPTIONS[0].value);
-  const navigage = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const loading = useAppSelector((state) => state.trivia.loading);
+  const { loading, difficulty } = useAppSelector((state) => state.trivia);
 
   const startTrivia = () => {
     dispatch(fetchQuestions(difficulty)).then((action) => {
       if (action.meta.requestStatus === "fulfilled") {
-        navigage(PATHS.quiz);
+        navigate(PATHS.quiz);
       }
     });
+  };
+
+  const handleDifficultyChange = (difficulty: Difficulty) => {
+    dispatch(changeDifficulty(difficulty));
   };
 
   return (
@@ -45,7 +51,9 @@ function WelcomePage() {
           label="Difficulty"
           icon={DifficultyIcon}
           value={difficulty}
-          onChange={setDifficulty}
+          onChange={(difficulty) =>
+            handleDifficultyChange(difficulty as Difficulty)
+          }
           options={SELECT_OPTIONS}
         />
         <TextInput

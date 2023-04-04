@@ -1,8 +1,10 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
+import { Answer, answerCurrentQuestion } from "app/slices/triviaSlice";
 import Button from "components/Button/Button";
+import Cross from "components/Cross/Cross";
+import { useCancelQuiz } from "hooks/useCancelQuiz";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Answer, answerCurrentQuestion } from "app/slices/triviaSlice";
 import { PATHS } from "router";
 import styles from "./QuizPage.module.css";
 import Background from "./components/Background/Background";
@@ -14,6 +16,8 @@ function QuizPage() {
   const { questions, currentQuestionIndex, quizDone } = useAppSelector(
     (state) => state.trivia
   );
+
+  const cancelQuiz = useCancelQuiz();
 
   useEffect(() => {
     if (!questions.length) {
@@ -30,6 +34,7 @@ function QuizPage() {
   return questions.length ? (
     <div className={styles.container}>
       <Background />
+      <Cross type="blue" onClick={cancelQuiz} />
       <Question
         question={questions[currentQuestionIndex]}
         currentQuestionIndex={currentQuestionIndex}

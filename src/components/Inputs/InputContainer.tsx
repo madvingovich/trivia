@@ -16,7 +16,7 @@ function InputContainer({
   children,
   onClick,
 }: InputContainerProps) {
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.nativeEvent.stopImmediatePropagation();
     onClick?.();
   };

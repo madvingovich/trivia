@@ -11,9 +11,7 @@ import imgDesktop4 from "images/bg-welcome-desktop-4.svg";
 
 function Background() {
   return (
-    <div
-      className={`${backgroundContainerStyle.container} ${backgroundStyles.container}`}
-    >
+    <div className={backgroundStyles.container}>
       <div className={backgroundContainerStyle.mobileView}>
         <img alt="" src={img1} />
         <img alt="" className={backgroundStyles.img2} src={img2} />

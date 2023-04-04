@@ -1,5 +1,6 @@
 .container {
   background-color: var(--color-bg);
+  composes: container from "../../../BackgroundContainer.module.css";
 }
 
 .img1 {

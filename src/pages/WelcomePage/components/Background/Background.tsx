@@ -21,7 +21,11 @@ function Background() {
         <img alt="" className={backgroundStyles.img4} src={img1} />
       </div>
       <div className={backgroundContainerStyle.desktopView}>
-        <img alt="" src={imgDesktop1} />
+        <img
+          alt=""
+          className={backgroundStyles.imgDesktop1}
+          src={imgDesktop1}
+        />
         <img
           alt=""
           className={backgroundStyles.imgDesktop2}

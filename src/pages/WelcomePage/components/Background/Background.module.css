@@ -16,16 +16,23 @@
   rotate: 180deg;
 }
 
+.imgDesktop1 {
+  height: 550px;
+}
+
 .imgDesktop2 {
   right: 0;
   top: 8%;
+  height: 300px;
 }
 
 .imgDesktop3 {
   bottom: 0;
+  height: 200px;
 }
 
 .imgDesktop4 {
   right: 0;
   bottom: 0;
+  height: 450px;
 }
